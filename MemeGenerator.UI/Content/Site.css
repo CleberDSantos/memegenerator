@@ -23,14 +23,23 @@ textarea {
     }
 
     .btn-facebook {
-        width: 50% !important;
+        width: 60% !important;
         margin: 0 auto;
     }
 }
 
-.btn-facebook {
-    width: 45% !important;
+@media only screen and (min-width : 992px) {
+
+    .btn-facebook {
+        width: 45% !important;
+    }
+
+    hr {
+        display:none;
+    }
 }
+
+
 
 .pirqui label {
     font-size: 3.3em;
