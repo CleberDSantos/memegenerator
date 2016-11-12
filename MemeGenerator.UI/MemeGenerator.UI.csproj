@@ -151,6 +151,7 @@
     <Content Include="Content\assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\assets\fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\geradormeme %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\geradormeme.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\app\model\pirqui.js" />
