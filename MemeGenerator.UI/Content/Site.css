@@ -16,3 +16,46 @@ textarea {
     max-width: 280px;
 }
 
+
+@media only screen and (max-width : 992px) {
+    .pirqui label {
+        font-size: 1.5em !important;
+    }
+}
+
+.pirqui label {
+     font-size: 3.3em;
+    color: #FFF !important;
+    font-family: Impact;
+    position: absolute;
+    z-index: 99;
+    text-align: center;
+}
+
+    .pirqui label:first-child {
+        top: 12%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .pirqui label:last-child {
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+.pirqui img {
+    position: relative;
+}
+
+.facebook a {
+    -moz-user-select: none;
+    background: #2A49A5;
+    border: 1px solid #082783;
+    box-shadow: 0 1px #4C6BC7 inset;
+    color: white;
+    padding: 3px 5px;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 #082783;
+    font: 12px Verdana, sans-serif;
+}

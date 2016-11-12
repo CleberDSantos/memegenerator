@@ -6,14 +6,43 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-social.css" rel="stylesheet" />
     <script>
+        var myLink = "http://geradormeme.azurewebsites.net";
+        var myTitle = "";
+        var myExcerpt = "";
         window.fbAsyncInit = function () {
             FB.init({
                 appId: '1428364047191112',
                 xfbml: true,
                 version: 'v2.8'
             });
+
+
+            document.getElementById('myshare').onclick = function(e) {
+                e.preventDefault();
+                FB.ui({
+                    method: 'feed',
+                    'link': myLink,
+                    'picture':  @Url.Content("~/Content/img/pirqui/resultado.jpg"),
+                    'name': myTitle,
+                    'caption': 'Gerador de Memes',
+                    'description': myExcerpt
+                }, function (response) {
+                    if (response && response.post_id) {
+                        alert("Thanks. This has been posted onto your timeline.");
+                    } else {
+                        alert("The post was not published.");
+                    } //Response from post attempt
+                });
+            }
+
+
+            
         };
+
+
 
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -43,15 +72,17 @@
         </div>
     </div>
 
-    <div class="container body-content">
+    <div class="container-fluid body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Desenvolvido por José Cléber dos Santos</p>
         </footer>
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/vue.min.js"></script>
+    <script src="~/Scripts/app/model/pirqui.js"></script>
 </body>
 </html>

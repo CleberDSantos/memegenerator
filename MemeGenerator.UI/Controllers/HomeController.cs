@@ -14,11 +14,13 @@ namespace MemeGenerator.UI.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            
             return View();
         }
 
         public ActionResult Login()
         {
+           
             ViewBag.UrlFb = GetFacebookLoginUrl();
             return View();
         }
@@ -27,7 +29,7 @@ namespace MemeGenerator.UI.Controllers
         {
             dynamic parameters = new ExpandoObject();
             parameters.client_id = "1428364047191112";
-            parameters.redirect_uri = "http://geradormeme.azurewebsites.net/home/retornofb";
+            parameters.redirect_uri = Request.Url + "/home/retornofb";
             parameters.response_type = "code";
             parameters.display = "page";
 
@@ -92,7 +94,7 @@ namespace MemeGenerator.UI.Controllers
                 //Pega o Access Token "permanente"
                 dynamic parameters = new ExpandoObject();
                 parameters.client_id = "1428364047191112";
-                parameters.redirect_uri = "http://geradormeme.azurewebsites.net/home/retornofb";
+                parameters.redirect_uri = Request.Url + "/home/retornofb";
                 parameters.client_secret = "27c5071280201e202ae7d2f2abb520ea";
                 parameters.code = oauthResult.Code;
 

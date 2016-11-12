@@ -3,30 +3,29 @@
     ViewBag.Title = "Gerador de Memes";
 }
 
-<h2>Gerador de Meme pirqui</h2>
+<h3>Gerador de Meme pirqui </h3>
 
-<div class="form-group">
+<div class="form-group" id="pirqui">
 
-
-
-    <form action="/home/PublicarFoto" method="post">
+    <form id="form" action="/home/PublicarFoto" method="post">
         <div class="row">
-            <div class="col-md-8">
-                <img src="~/Content/img/pirqui/meme.jpg" />
+            <div class="col-md-7 pirqui">
+                <label>{{message}}</label>
+                <img src="~/Content/img/pirqui/meme.jpg" class="img-responsive center-block" />
+                <label>{{convertMessage}}</label>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label>Informe o texto</label>
-                    <input type="text" class="form-control" name="text"  />
+                    <textarea v-model="message" class="form-control" rows="3" name="text"></textarea>
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="enviar" value="Enviar" class="btn btn-default" />
+                    <a class="btn btn-block btn-social btn-facebook" onclick="document.getElementById('form').submit()" style="width:45%;">
+                        <span class="fa fa-facebook"></span> Postar no Facebook
+                    </a>
                 </div>
             </div>
         </div>
     </form>
 
 </div>
-
-
-
