@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Gerador de Memes";
+}
+
+<h2>Gerador de Meme pirqui</h2>
+
+<div class="form-group">
+
+
+
+    <form action="/home/PublicarFoto" method="post">
+        <div class="row">
+            <div class="col-md-8">
+                <img src="~/Content/img/pirqui/meme.jpg" />
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Informe o texto</label>
+                    <input type="text" class="form-control" name="text"  />
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="enviar" value="Enviar" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+
+
