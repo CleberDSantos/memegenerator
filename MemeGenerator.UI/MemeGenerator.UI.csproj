@@ -134,7 +134,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\error.jpg" />
     <Content Include="Content\img\pirqui\meme.jpg" />
+    <Content Include="Content\img\pirqui\resultado.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -186,6 +188,8 @@
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\shared\_LayoutPage.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\ErrorPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

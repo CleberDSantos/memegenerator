@@ -3,11 +3,20 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Gerador de Memes</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/assets/css/font-awesome.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-social.css" rel="stylesheet" />
+
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="http://www.geradormeme.azurewebsites.net">
+    <meta property="og:title" content="Aplicativo gerador de MEMES">
+    <meta property="og:site_name" content="geradorMemes">
+    <meta property="og:image" content="http://geradormeme.azurewebsites.net/Content/img/pirqui/resultado.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="719"> 
+    <meta property="og:image:height" content="580"> 
     <script>
         var myLink = "http://geradormeme.azurewebsites.net";
         var myTitle = "";
@@ -67,6 +76,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Sobre", "About", "Home", new { area = "" })</li>
                 </ul>
             </div>
         </div>

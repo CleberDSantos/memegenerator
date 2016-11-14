@@ -14,13 +14,16 @@ namespace MemeGenerator.UI.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            
+            if (Session["FbuserToken"] == null)
+            {
+                return RedirectToAction("Login");
+            }
             return View();
         }
 
         public ActionResult Login()
         {
-           
+
             ViewBag.UrlFb = GetFacebookLoginUrl();
             return View();
         }
@@ -43,9 +46,8 @@ namespace MemeGenerator.UI.Controllers
         }
 
 
-        public ActionResult PublicarFoto(string text) {
-
-           
+        public ActionResult PublicarFoto(string text)
+        {
 
             var pirqui = new MemeGeneratorProject.MemeGenerator();
             var obj = pirqui.PirquiGenerator(text, Server.MapPath("~/Content/img/pirqui/meme.jpg"));
@@ -74,14 +76,18 @@ namespace MemeGenerator.UI.Controllers
                 }
                 catch (Exception ex)
                 {
+
+                    Session.Remove("FbuserToken");
+        
+                    return this.RedirectToAction("ErrorPage");
+
                 }
             }
 
-
+            Session.Remove("FbuserToken");
             return Redirect("http://www.facebook.com/");
 
         }
-
         public ActionResult RetornoFb()
         {
             var _fb = new FacebookClient();
@@ -107,13 +113,24 @@ namespace MemeGenerator.UI.Controllers
             }
             else
             {
-                
+
                 // tratar
             }
 
             return RedirectToAction("Index");
         }
 
-       
+        public ActionResult About()
+        {
+
+            return View();
+        }
+
+        public ActionResult ErrorPage()
+        {
+
+
+            return View();
+        }
     }
 }
